@@ -1,0 +1,19 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+}
+.vertical-align {
+  transform: translateY(100%);
+}
+footer {
+  padding: 60px 20px;
+}

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: linear-gradient(114deg, rgba(0, 0, 0, 0.9) 27%, rgb(23 25 26 / 59%) 50%),
+      linear-gradient(114deg, rgba(93, 105, 103, 0.49) 0%, rgb(22, 87, 100) 66%),
+      linear-gradient(114deg, rgb(56 80 79 / 51%) 0%, rgb(6 33 38 / 95%) 97%);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-image: linear-gradient(
+        114deg,
+        rgb(217 224 229 / 44%) 27%,
+        rgb(238 241 241 / 76%) 50%
+      ),
+      linear-gradient(114deg, rgb(220 233 231 / 49%) 0%, rgba(6, 187, 224, 0.43) 66%),
+      linear-gradient(114deg, rgb(251 255 255) 0%, rgb(231 231 231 / 15%) 97%);
+  }
+}
+body.light {
+  background-image: linear-gradient(114deg, rgb(217 224 229 / 44%) 27%, rgb(238 241 241 / 76%) 50%),
+    linear-gradient(114deg, rgb(220 233 231 / 49%) 0%, rgba(6, 187, 224, 0.43) 66%),
+    linear-gradient(114deg, rgb(251 255 255) 0%, rgb(231 231 231 / 15%) 97%);
+  .preview-link {
+    &:after {
+      background: theme('colors.scooter.50');
+    }
+  }
+}
