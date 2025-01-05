@@ -68,7 +68,7 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
 
 </script>
 <template>
- <div class="wrapper relative">
+ <div class="wrapper relative px-8">
         <div class="top-nav fixed justify-between left-0 top-0 flex w-full p-8">
             <header role="banner" class="flex">
                 <a
@@ -86,11 +86,11 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
             class="fixed bg-element size-60 rounded-full blur-sm bg-gradient-to-r from-scooter-100 dark:from-casal-800"
             ref="bgElement"
         ></div>
-        <div class="left-wrapper floating-elements">
+        <div class="left-wrapper floating-elements pt-16">
             <div class="relative md:fixed pt-16 md:pt-0 top-1/2 md:left-8">
                 <h1 v-if="store.activeTabIndex === 0" 
                 ref="textElement"
-                 class="text-dark dark:text-white text-6xl"
+                 class="text-dark dark:text-white text-5xl md:text-6xl"
                   @mouseenter="startText"
                   @mouseleave="endTextAnimation"
                   >
@@ -116,11 +116,11 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
 
     <footer role="contentinfo">
         <div class="social-wrapper">
-            <a href="https://wa.me/447586485912">
-                <Icon icon-id="whatsapp" view-box="0 0 16 16"></Icon>
+            <a href="https://wa.me/447586485912" class="text-dark dark:text-white">
+                <Icon class="fill-casal-950 dark:fill-scooter-50" icon-id="whatsapp" view-box="0 0 16 16"></Icon>
             </a>
-            <a href="https://github.com/raluseru">
-                <Icon icon-id="github" view-box="0 0 16 16"></Icon>
+            <a href="https://github.com/raluseru" class="text-dark dark:text-white">
+                <Icon class="fill-casal-950 dark:fill-scooter-50" icon-id="github" view-box="0 0 16 16"></Icon>
             </a>
         </div>
 

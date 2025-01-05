@@ -55,3 +55,13 @@ body.light {
     }
   }
 }
+body.dark {
+  background-image: linear-gradient(114deg, rgba(0, 0, 0, 0.9) 27%, rgb(23 25 26 / 59%) 50%),
+  linear-gradient(114deg, rgba(93, 105, 103, 0.49) 0%, rgb(22, 87, 100) 66%),
+  linear-gradient(114deg, rgb(56 80 79 / 51%) 0%, rgb(6 33 38 / 95%) 97%);
+  .preview-link {
+    &:after {
+      background: theme('colors.casal.950');
+    }
+  }
+}
