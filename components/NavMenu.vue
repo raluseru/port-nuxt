@@ -9,19 +9,19 @@ import { store } from '../composables/store'
                 key="0"
                 class="menu-item text-slate-900 dark:text-white"
                 role="menuitem"
-                :class="{ active: store.activeTabIndex === 0 }"
-                @click="store.changeActiveTab(0)"
+               
+               
             >
-                Projects
+                <NuxtLink to="/" active-class="active">Projects</NuxtLink>
             </li>
             <li
                 key="1"
                 class="menu-item text-slate-900 dark:text-white"
                 role="menuitem"
-                :class="{ active: store.activeTabIndex === 2 }"
-                @click="store.changeActiveTab(2)"
+                
+              
             >
-                About
+            <NuxtLink to="/about" active-class="active">About</NuxtLink>
             </li>
             <li role="menuitem">
                 <button
@@ -55,7 +55,8 @@ nav {
         padding: 0 5px;
         transition: border ease-in 0.2s;
 
-        &:after {
+        a{
+            &:after {
             content: '';
             position: absolute;
             width: 0;
@@ -64,21 +65,26 @@ nav {
             top: 100%;
             left: 0;
             transition: all 0.2s ease-in-out;
+            }
+            &:hover:after,
+            &.active:after {
+                width: 100%;
+            }
         }
-        &:hover:after,
-        &.active:after {
-            width: 100%;
-        }
+       
         &:last-of-type {
             display: inline-flex;
             justify-content: flex-end;
             min-width: 60px;
             align-items: center;
-            &:after,
-            &:hover:after,
-            &.active:after {
-                display: none;
+            a{
+                &:after,
+                &:hover:after,
+                &.active:after {
+                    display: none;
+                }
             }
+            
             & > div {
                 top: -16px;
             }

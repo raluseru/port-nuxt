@@ -1,12 +1,8 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-    activeTabIndex: 0,
     isDark: false,
     colorScheme: 'light',
-    changeActiveTab(newIndex: number) {
-        this.activeTabIndex = newIndex
-    },
     changeTheme(newValue: string) {
         const root = document.body
         if (newValue==='dark') {

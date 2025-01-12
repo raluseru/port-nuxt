@@ -21,13 +21,12 @@
     </p>
     <p class="text-dark dark:text-white">
         My Javascript / TypeScript experience is mostly in Vue.js framework or vanilla TypeScript,
-        but I like to experience other technologies as well. It's not only about a type of
-        framework. It's mostly about the algorithm you choose and the way you can apply certain
-        programming principles - I like to write comprehensive code, which is easy to be understood
+        but I like to experience other technologies as well. Choosing the correct algorithm and the way certain
+        programming principles are applied assure a good development practice. I like to write comprehensive code, which is easy to be understood
         by others.
     </p>
     <p class="text-dark dark:text-white">
-        In my spare time I like "to play with pencils". My educational and previous professional
+        In my spare time I like to draw, paint and put my imagination into practice. My educational and previous professional
         background is in architectural and urban studies which helped me in approaching all types of
         projects from a multidisciplinary point of view.
     </p>

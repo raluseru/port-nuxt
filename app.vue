@@ -65,9 +65,10 @@ onMounted(() => {
 const colorMode = useColorMode()
 
 if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
-
+const route = useRoute()
 </script>
 <template>
+
  <div class="wrapper relative px-8">
         <div class="top-nav fixed justify-between left-0 top-0 flex w-full p-8">
             <header role="banner" class="flex">
@@ -88,7 +89,8 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
         ></div>
         <div class="left-wrapper floating-elements pt-16">
             <div class="relative md:fixed pt-16 md:pt-0 top-1/2 md:left-8">
-                <h1 v-if="store.activeTabIndex === 0" 
+                <h1 v-if="route.path==='/about'" class="text-dark dark:text-white text-6xl">About</h1>
+                <h1 v-else 
                 ref="textElement"
                  class="text-dark dark:text-white text-5xl md:text-6xl"
                   @mouseenter="startText"
@@ -96,15 +98,13 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
                   >
                     PORTFOLIO
                 </h1>
-                <h1 v-else class="text-dark dark:text-white text-6xl">About</h1>
             </div>
             <div class="fixed rectangle second-rectangle rounded-full" ref="bgElement2"></div>
         </div>
         <div class="rellax middle-wrapper">
             <main role="main">
-                <WorkSamples v-if="store.activeTabIndex === 0" />
-                <UrbanDesign v-if="store.activeTabIndex === 1" />
-                <About v-if="store.activeTabIndex === 2"></About>
+                <NuxtPage />
+              
             </main>
         </div>
         <div class="right-wrapper relative">
@@ -112,14 +112,16 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
                 <h1 class="text-dark dark:text-white text-6xl">Raluca</h1>
             </div>
         </div>
-    </div>
+</div>
 
     <footer role="contentinfo">
         <div class="social-wrapper">
             <a href="https://wa.me/447586485912" class="text-dark dark:text-white">
+                <span class="sr-only">Link to whatsapp</span>
                 <Icon class="fill-casal-950 dark:fill-scooter-50" icon-id="whatsapp" view-box="0 0 16 16"></Icon>
             </a>
             <a href="https://github.com/raluseru" class="text-dark dark:text-white">
+                <span class="sr-only">Link to github</span>
                 <Icon class="fill-casal-950 dark:fill-scooter-50" icon-id="github" view-box="0 0 16 16"></Icon>
             </a>
         </div>
@@ -128,6 +130,7 @@ if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
             &copy; 2024 Design & Code Raluca-Mihaela Serdaru
         </p>
     </footer>
+
 </template>
 <style>
 
@@ -144,6 +147,7 @@ main {
 .wrapper {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 .middle-wrapper {
     min-height: 1200px;
