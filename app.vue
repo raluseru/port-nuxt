@@ -44,7 +44,6 @@ function startText() {
     })
 }
 function endTextAnimation() {
-    console.log('here')
     const el = textElement.value
     anime({
         targets: el,
@@ -54,17 +53,20 @@ function endTextAnimation() {
         duration: 0,
     })
 }
+const colorMode = useColorMode()
 onMounted(() => {
-   
+ if (colorMode.value === 'dark') {
+    store.changeTheme('dark')
+  } else {
+    store.changeTheme('light')
+  }
     setTimeout(() => {
         startMotion()
         startMotion2()
     }, 500)
     const rellax = new Rellax('.rellax')
 })
-const colorMode = useColorMode()
 
-if (colorMode.value ==='dark') store.changeTheme(colorMode.value)
 const route = useRoute()
 </script>
 <template>
@@ -87,6 +89,8 @@ const route = useRoute()
             class="fixed bg-element size-60 rounded-full blur-sm bg-gradient-to-r from-scooter-100 dark:from-casal-800"
             ref="bgElement"
         ></div>
+                        <FollowCusor />
+
         <div class="left-wrapper floating-elements pt-16">
             <div class="relative md:fixed pt-16 md:pt-0 top-1/2 md:left-8">
                 <h1 v-if="route.path==='/about'" class="text-dark dark:text-white text-6xl">About</h1>
@@ -103,6 +107,7 @@ const route = useRoute()
         </div>
         <div class="rellax middle-wrapper">
             <main role="main">
+
                 <NuxtPage />
               
             </main>

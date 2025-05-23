@@ -4,6 +4,22 @@ import { computed, onMounted, ref } from 'vue'
 import { store } from '../composables/store'
 const workArray = [
     {
+        id: 'oikia',
+        link: 'https://oikiafurniture.co.uk/',
+        img: {
+            src: '/oikia.png',
+            alt: 'Logo oikia',
+        },
+        imgDark: {
+            src: '/oikiawhite.png',
+            alt: 'Logo Arhitext white',
+        },
+        imgPreview: {
+            src: '/oikiapreview.png',
+            alt: 'Preview oikia',
+        },
+    },
+    {
         id: 'arhitext',
         link: 'https://arhitext.com/',
         img: {

@@ -13,6 +13,12 @@ export default defineNuxtConfig({
      '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode'
   ],
+  colorMode: {
+    classSuffix: '',
+    fallback: 'light',
+    preference: 'system',
+    storageKey: 'nuxt-color-mode'
+  },
   app: {
     head: {
       charset: 'utf-8',
